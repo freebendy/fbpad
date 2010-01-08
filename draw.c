@@ -21,9 +21,9 @@ static struct fb_fix_screeninfo finfo;
 static int rl, rr, gl, gr, bl, br;
 static int nr, ng, nb;
 
-static int fb_len()
+static int fb_len(void)
 {
-	return vinfo.xres_virtual * vinfo.yres_virtual * BPP;
+	return finfo.line_length * vinfo.yres_virtual;
 }
 
 static void fb_cmap_save(int save)
